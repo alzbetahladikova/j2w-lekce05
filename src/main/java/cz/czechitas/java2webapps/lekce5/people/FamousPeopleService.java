@@ -38,7 +38,10 @@ public class FamousPeopleService {
   public void edit(int id, Person person) {
     people.set(id, person);
   }
+
   public void deleteById(int id) {
     people.remove(id);
   }
+
+
 }

@@ -59,6 +59,33 @@
         [/#list]
         </tbody>
     </table>
+    <h1 class="mt-5 mb-3">ADD people</h1>
+
+    <form class="row g-3" method="post" action="/">
+        <div class="col-md-3">
+            <label for="given-name" class="form-label">Given name</label>
+            <input id="given-name" name="givenName" class="form-control" type="text" value=""/>
+        </div>
+        <div class="col-md-4">
+            <label for="last-name" class="form-label">Last name</label>
+            <input id="last-name" name="lastName" class="form-control" type="text" value=""/>
+        </div>
+        <div class="col-md-2">
+            <label for="birth-date" class="form-label">Birth date</label>
+            <input id="birth-date" name="birthDate" class="form-control" type="date" value=""/>
+        </div>
+        <div class="col-md-2">
+            <label for="gender" class="form-label">Gender</label>
+            <select id="gender" name="gender" class="form-select"  value="">
+                [#list gender as item]
+                    <option value="${item.name()}">${item.title}</option>
+                [/#list]
+            </select>
+        </div>
+        <div class="col-md-1 align-self-end">
+            <button type="submit" class="btn btn-primary"><i class="bi bi-person-check-fill" role="img" aria-label="Edit"></i></button>
+        </div>
+    </form>
 </div>
 </body>
 </html>

@@ -53,7 +53,10 @@ public class FamousPeopleController {
     return result;
   }
 
-
+  @PostMapping("/")
+  public String add ( Person person){
+    service.append(person);
+    return "redirect:/";}
 
 }
 
