@@ -2,15 +2,12 @@ package cz.czechitas.java2webapps.lekce5.people;
 
 import cz.czechitas.java2webapps.lekce5.entity.Gender;
 import cz.czechitas.java2webapps.lekce5.entity.Person;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.time.LocalDate;
 
 /**
  * @author Filip Jirsák
@@ -41,7 +38,8 @@ public class FamousPeopleController {
 @PostMapping("/{id}")
     public String  edit (@PathVariable int id, Person person){
     service.edit(id, person);
-    return "redirect:/";}
+    return "redirect:/";
+  }
 
 
 
@@ -56,8 +54,15 @@ public class FamousPeopleController {
   @PostMapping("/")
   public String add ( Person person){
     service.append(person);
-    return "redirect:/";}
+    return "redirect:/";
 
+
+  }
+
+ @PostMapping("/delete/{id}")
+public String deleteById (@PathVariable int id){
+ service.deleteById(id);
+return "redirect:/";}
 }
 
 
